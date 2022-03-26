@@ -18,7 +18,7 @@ export default (props, { $store, $onMounted }) => {
       <div class="navbar navbar-transparent">
         <div class="navbar-bg" />
         <div class="navbar-inner">
-          <div class="title">👋 Welcome to, F1 Weekly</div>
+          <div class="title">Discover</div>
           <div class="right">
             <a href="/search/" class="link icon-only">
               <i class="icon f7-icons ios-only">search</i>
@@ -28,8 +28,8 @@ export default (props, { $store, $onMounted }) => {
         </div>
       </div>
       <div class="page-content">
-        <div class="page-title">👋 Welcome to, F1 Weekly</div>
-        <div class="block-title block-title-medium">Upcoming races</div>
+        <div class="page-title">Discover</div>
+        <div class="block-title block-title-medium">Upcoming games</div>
         {upcomingGames.value.length > 0 ? (
           <GameCards key="upcoming" games={upcomingGames} />
         ) : (

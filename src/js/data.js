@@ -1,4 +1,4 @@
-export const categories = [
+export const races = [
   {
     id: 1,
     title: 'Bahrain GP',
@@ -22,6 +22,7 @@ export const categories = [
     id: 4,
     title: 'Drinks',
     image: 'images/drinks/pepsi.png',
+    date: '2022-04-10',
   },
 ];
 
