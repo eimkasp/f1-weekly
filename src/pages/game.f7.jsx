@@ -56,7 +56,7 @@ export default (
   };
 
   $onMounted(() => {
-    $store.dispatch('getGame', id).then((res) => {
+    $store.dispatch('getRace', id).then((res) => {
       game = res;
       initPhotoBrowser();
       $update();

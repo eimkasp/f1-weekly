@@ -17,7 +17,7 @@ const store = createStore({
     archive: getFromLocalStorage('archive', []),
     wishlist: getFromLocalStorage('wishlist', []),
     topGames: [],
-    recentGames: [],
+    recentRaces: [],
     upcomingGames: [],
   },
   getters: {
@@ -30,7 +30,7 @@ const store = createStore({
     archive: ({ state }) => state.archive,
     wishlist: ({ state }) => state.wishlist,
     topGames: ({ state }) => state.topGames,
-    recentGames: ({ state }) => state.recentGames,
+    recentRaces: ({ state }) => state.recentRaces,
     upcomingGames: ({ state }) => state.upcomingGames,
   },
   actions: {
@@ -46,17 +46,17 @@ const store = createStore({
     },
     async getTopGames({ state }) {
       const response = await api.getTopGames();
-      state.topGames = [...response.results]
-        .filter((game) => !!game.background_image)
-        .slice(0, 25);
+      console.log(response.response);
+      state.topGames = [...response.response];
     },
-    async getRecentGames({ state }) {
-      const response = await api.getRecentGames();
-      state.recentGames = [...response.results];
+    async getRecentRaces({ state }) {
+      const response = await api.getRecentRaces();
+      console.log(response);
+      state.recentGames = [...response.response];
     },
-    async getUpcomingGames({ state }) {
-      const response = await api.getUpcomingGames();
-      state.upcomingGames = [...response.results];
+    async getUpcomingRaces({ state }) {
+      const response = await api.getUpcomingRaces();
+      state.upcomingGames = [...response.response];
     },
     addGameToList({ state }, { listName, game }) {
       const list = state[listName];
@@ -75,7 +75,7 @@ const store = createStore({
       localStorage[listName] = JSON.stringify(state[listName]);
     },
 
-    getGame(ctx, id) {
+    getRace(ctx, id) {
       return api.getGame(id);
     },
 

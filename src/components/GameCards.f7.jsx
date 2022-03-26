@@ -10,8 +10,10 @@ export default function GameCards(props) {
     grid ? 'game-cards-grid' : 'scroll-block',
     skeleton ? 'skeleton-effect-wave' : '',
   ];
+
   return () => (
     <div class={classes().join(' ')}>
+      
       {/* show skeleton loading when no items */}
       {skeleton &&
         Array.from({ length: 12 }).map((_, index) => (
@@ -23,30 +25,18 @@ export default function GameCards(props) {
         ))}
       {/* otherwise show items */}
       {!skeleton &&
-        (games.value || games).map((game) => (
+        (games.value || games ).map((game) => (
           <a
             key={game.id}
             class="game-card scroll-block-item"
             href={`/game/${game.id}/`}
           >
             <div class="game-card-image">
-              <img
-                src={game.background_image || 'images/no-image.svg'}
-                alt={game.name}
-                onLoad={(e) => e.target.classList.add('loaded')}
-              />
             </div>
 
             <div class="game-card-logos">
-              {gamePlatforms(game).map((platform) => (
-                <img src={`images/${platform}-logo.svg`} alt={platform} />
-              ))}
-              {metacritic && (
-                <div class="game-card-metacritic">
-                  <img src="images/metacritic-logo.svg" alt="metacritic" />
-                  <span>{game.metacritic}</span>
-                </div>
-              )}
+             
+              
             </div>
             <div class="game-card-name">{game.name}</div>
           </a>

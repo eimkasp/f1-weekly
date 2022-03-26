@@ -1,11 +1,11 @@
 import GameCards from '../components/GameCards.f7.jsx';
 
 export default (props, { $store, $onMounted }) => {
-  const { recentGames, upcomingGames, topGames } = $store.getters;
+  const { recentRaces, upcomingGames, topGames } = $store.getters;
 
   const fetchData = () => {
-    $store.dispatch('getUpcomingGames');
-    $store.dispatch('getRecentGames');
+    $store.dispatch('getUpcomingRaces');
+    $store.dispatch('getRecentRaces');
     $store.dispatch('getTopGames');
   };
 
@@ -28,22 +28,22 @@ export default (props, { $store, $onMounted }) => {
         </div>
       </div>
       <div class="page-content">
-        <div class="page-title">Discover</div>
-        <div class="block-title block-title-medium">Upcoming games</div>
+        <div class="page-title">👋 Welcome to F1 Weekly</div>
+        <div class="block-title block-title-medium">Upcoming Races</div>
         {upcomingGames.value.length > 0 ? (
           <GameCards key="upcoming" games={upcomingGames} />
         ) : (
           <GameCards key="upcoming-skeleton" skeleton />
         )}
 
-        <div class="block-title block-title-medium">Recently released</div>
-        {recentGames.value.length > 0 ? (
-          <GameCards key="recent" games={recentGames} />
+        <div class="block-title block-title-medium">Recent Races</div>
+        {recentRaces.value.length > 0 ? (
+          <GameCards key="recent" games={recentRaces} />
         ) : (
           <GameCards key="recent-skeleton" skeleton />
         )}
 
-        <div class="block-title block-title-medium">All time top 25</div>
+        <div class="block-title block-title-medium">Top Drivers / Standings</div>
         {topGames.value.length > 0 ? (
           <GameCards key="top" games={topGames} metacritic />
         ) : (
