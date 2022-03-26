@@ -1,35 +1,40 @@
+var image_url = "https://d3ie7ogstrup9y.cloudfront.net/wp-content/uploads/2021/01/19085808/PNG-RGB-72-DPI-Bahrain_GulfAir_Logo_2021_ETG_POS_Standard_RGB.png";
+
 export const races = [
   {
     id: 1,
-    title: 'Bahrain GP',
-    image: 'images/burgers/bigmac.png',
+    name: 'Bahrain GP',
+    image: 'https://f1-weekly.com/images/Screenshot-2022-03-17-at-19-34-2.png',
     date: '2019-01-01',
+    status: 'done'
   },
   {
     id: 2,
-    title: 'Saudi Arabia GP',
-    image: 'images/pizza/mix.png',
+    name: 'Saudi Arabia GP',
+    image: 'https://scontent.fkun1-1.fna.fbcdn.net/v/t39.30808-6/277368253_106771571981473_844964204046739531_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=I-pOc-242PcAX_8dt67&tn=24HC3XIzjvAYxgqU&_nc_ht=scontent.fkun1-1.fna&oh=00_AT-WVssY4Q5HDsl2IUg1kflRFHvGmZsB6EQYDI_1iXt7ZQ&oe=6243D313',
     date: '2022-03-27',
-
+    status: 'next'
   },
   {
     id: 3,
-    title: 'Australian GP',
-    image: 'images/desserts/chocolate-donut.png',
+    name: 'Australian GP',
+    image: 'https://eim.solutions/wp-content/uploads/2022/03/F1-weekly-Logo-2.png',
     date: '2022-04-10',
+    status: 'future'
   },
   {
     id: 4,
     title: 'Drinks',
-    image: 'images/drinks/pepsi.png',
+    image: image_url,
     date: '2022-04-10',
+    status: 'future'
   },
 ];
 
 export const items = [
   {
     id: 1,
-    title: 'Diablo',
+    name: 'Diablo',
     subtitle: 'Spicy chorizo with hot jalapeno peppers',
     description:
       'Spicy chorizo , hot jalapeno peppers , barbecue sauce , mithballs , tomatoes , sweet peppers , red onions , mozzarella , tomato sauce',

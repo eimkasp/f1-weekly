@@ -1,5 +1,7 @@
 import { createStore } from 'framework7';
 import api from './api.js';
+import { races } from './data.js';
+
 
 const getFromLocalStorage = (key, defaultValue) => {
   return localStorage[key] ? JSON.parse(localStorage[key]) : defaultValue;
@@ -16,9 +18,9 @@ const store = createStore({
     backlog: getFromLocalStorage('backlog', []),
     archive: getFromLocalStorage('archive', []),
     wishlist: getFromLocalStorage('wishlist', []),
-    topGames: [],
-    recentRaces: [],
-    upcomingGames: [],
+    topGames: getFromLocalStorage('races', races),
+    recentRaces: getFromLocalStorage('races', races).filter((item) => (item.status == 'done')),
+    upcomingGames: getFromLocalStorage('races', races).filter((item) => (item.status != 'done' && item.status)),
   },
   getters: {
     searchResults: ({ state }) => state.searchResults,
@@ -45,18 +47,19 @@ const store = createStore({
       };
     },
     async getTopGames({ state }) {
-      const response = await api.getTopGames();
-      console.log(response.response);
-      state.topGames = [...response.response];
+      // const response = await api.getTopGames();
+      // console.log(response.response);
+      return state.topGames;
     },
     async getRecentRaces({ state }) {
-      const response = await api.getRecentRaces();
-      console.log(response);
-      state.recentGames = [...response.response];
+      // const response = await api.getRecentRaces();
+      // console.log(response);
+      console.log(state.recentGames);
+      return state.recentGames;
     },
     async getUpcomingRaces({ state }) {
-      const response = await api.getUpcomingRaces();
-      state.upcomingGames = [...response.response];
+      // const response = await api.getUpcomingRaces();
+      return state.upcomingGames;
     },
     addGameToList({ state }, { listName, game }) {
       const list = state[listName];

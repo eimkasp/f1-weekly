@@ -74,9 +74,9 @@ export default function Onboarding(
                 <div class="onboarding-icon">
                   <img src="icons/128x128.png" />
                 </div>
-                <div class="onboarding-title">Backlogger</div>
+                <div class="onboarding-title">F1-Weekly</div>
                 <div class="onboarding-text">
-                  Welcome to the Backlogger - ultimate video games tracking app!
+                  Formula-1. In your inbox. Once a week.
                 </div>
                 <div class="onboarding-next">
                   <a href="#" class="button button-small" onClick={slideNext}>

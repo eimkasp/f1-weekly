@@ -28,7 +28,8 @@ export default (props, { $store, $onMounted }) => {
         </div>
       </div>
       <div class="page-content">
-        <div class="page-title">👋 Welcome to F1 Weekly</div>
+        {/* <img src="https://scontent.fkun1-1.fna.fbcdn.net/v/t39.30808-6/277368253_106771571981473_844964204046739531_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=I-pOc-242PcAX_8dt67&tn=24HC3XIzjvAYxgqU&_nc_ht=scontent.fkun1-1.fna&oh=00_AT-WVssY4Q5HDsl2IUg1kflRFHvGmZsB6EQYDI_1iXt7ZQ&oe=6243D313"  /> */}
+        <div class="page-title">👋 Welcome to <br /> F1 Weekly</div>
         <div class="block-title block-title-medium">Upcoming Races</div>
         {upcomingGames.value.length > 0 ? (
           <GameCards key="upcoming" games={upcomingGames} />

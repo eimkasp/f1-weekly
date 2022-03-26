@@ -26,17 +26,36 @@ export default function GameCards(props) {
       {/* otherwise show items */}
       {!skeleton &&
         (games.value || games ).map((game) => (
+          
           <a
             key={game.id}
             class="game-card scroll-block-item"
-            href={`/game/${game.id}/`}
+            href={`/race/${game.id}/`}
           >
             <div class="game-card-image">
+              <img src={`${game.image}`} class="loaded" style="background: white; object-fit: cover;" />
             </div>
 
             <div class="game-card-logos">
-             
-              
+            {game.status == 'done' &&
+            <div>
+              <span class='badge color-red'>Done</span>
+            </div>
+            }
+
+{game.status == 'next' &&
+            <div>
+              <span class='badge color-green'>Next Race</span>
+            </div>
+            }
+
+{game.status == 'future' &&
+            <div>
+              <span class='badge color-yellow'>{ game.date }</span>
+            </div>
+            }
+
+
             </div>
             <div class="game-card-name">{game.name}</div>
           </a>

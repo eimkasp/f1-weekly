@@ -11,22 +11,22 @@ export default () => {
             <a href="#discover" class="tab-link tab-link-active">
               <i class="icon f7-icons ios-only">compass_fill</i>
               <i class="icon material-icons md-only">explore</i>
-              <span class="tabbar-label">👋 Welcome to, F1 Weekly</span>
+              <span class="tabbar-label">Home</span>
             </a>
             <a href="#backlog" class="tab-link">
               <i class="icon f7-icons ios-only">gamecontroller_fill</i>
               <i class="icon material-icons md-only">sports_esports</i>
-              <span class="tabbar-label">Backlog</span>
+              <span class="tabbar-label">Standings</span>
             </a>
             <a href="#wishlist" class="tab-link">
               <i class="icon f7-icons ios-only">square_favorites_alt_fill</i>
               <i class="icon material-icons md-only">collections_bookmark</i>
-              <span class="tabbar-label">Wishlist</span>
+              <span class="tabbar-label">Newsletter</span>
             </a>
             <a href="#archive" class="tab-link">
               <i class="icon f7-icons ios-only">tray_fill</i>
               <i class="icon material-icons md-only">inventory_2</i>
-              <span class="tabbar-label">Archive</span>
+              <span class="tabbar-label">About</span>
             </a>
           </div>
         </div>
