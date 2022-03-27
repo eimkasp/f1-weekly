@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.f7": "html"
+  },
+  "emmet.includeLanguages": {
+    "javascriptreact": "xml",
+  },
+}
