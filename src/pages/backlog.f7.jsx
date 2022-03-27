@@ -14,7 +14,7 @@ export default (props, { $store, $theme }) => {
       <div class="navbar navbar-transparent">
         <div class="navbar-bg" />
         <div class="navbar-inner">
-          <div class="title">Backlog</div>
+          <div class="title">Stadings</div>
         </div>
       </div>
       <div class="page-content">

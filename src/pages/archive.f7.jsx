@@ -12,17 +12,31 @@ export default (props, { $store, $theme }) => {
       <div class="navbar navbar-transparent">
         <div class="navbar-bg" />
         <div class="navbar-inner">
-          <div class="title">Archive</div>
+          <div class="title">About F1-Weekly</div>
         </div>
       </div>
       <div class="page-content">
-        <div class="page-title">Archive</div>
+        <div class="page-title">About F1-Weekly</div>
         {archive.value.length > 0 ? (
           <GameCards small grid games={archive} />
         ) : (
           <div class="block collection-placeholder">
-            Your Archive is empty. Tap the {icon} button on the tab bar to
-            discover new games.
+             <a
+          class="col button button-large button-round button-fill"
+          style="margin-top: 50px;"
+          href="https://github.com/eimkasp/f1-weekly" 
+          target="_system">
+            Visit our github
+            </a>
+
+            <a
+          class="col button button-large button-round button-fill"
+          style="margin-top: 50px;"
+          href="https://www.instagram.com/f1weekly.live/" 
+          target="_system">
+            Visit our Instagram @f1weekly.live
+            </a>
+
           </div>
         )}
       </div>

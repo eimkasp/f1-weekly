@@ -33,11 +33,19 @@ export default function DriverCards(props) {
             href="#"
           >
             <div class="game-card-image">
-              <img src={`${game.driver.image}`} class="loaded" style="background: white; object-fit: contain;" />
+                <div style="position: relative; height: 100%;">
+              <img src={`${game.driver.image}`} class="loaded" style=" background: white; object-fit: contain;" />
+
+              <img src={`${game.team.logo}`} class="loaded" style="position: absolute; height: 50px; top: 0; left: 0; box-shadow: none; object-fit: contain;" />
+
+                </div>
+
+
             </div>
 
             <div class="game-card-logos">
             <div>
+
               <span class='badge color-deeporange'>{  game.points } Points</span>
             </div>
 

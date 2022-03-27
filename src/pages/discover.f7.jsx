@@ -19,7 +19,7 @@ export default (props, { $store, $onMounted }) => {
       <div class="navbar navbar-transparent">
         <div class="navbar-bg" />
         <div class="navbar-inner">
-          <div class="title">Discover</div>
+          <div class="title">F1-Weekly</div>
           <div class="right">
             <a href="/search/" class="link icon-only">
               <i class="icon f7-icons ios-only">search</i>
