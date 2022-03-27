@@ -109,9 +109,9 @@ export default function Onboarding(
                   <i class="icon f7-icons ios-only">gamecontroller_fill</i>
                   <i class="icon material-icons md-only">sports_esports</i>
                 </div>
-                <div class="onboarding-title">Backlog</div>
+                <div class="onboarding-title">Standings</div>
                 <div class="onboarding-text">
-                  Add games that you own or currently play to the Backlog.
+                  See the current standings of the Formula-1 world.
                 </div>
                 <div class="onboarding-next">
                   <a href="#" class="button button-small" onClick={slideNext}>
@@ -130,10 +130,9 @@ export default function Onboarding(
                     collections_bookmark
                   </i>
                 </div>
-                <div class="onboarding-title">Wishlist</div>
+                <div class="onboarding-title">Newsletter</div>
                 <div class="onboarding-text">
-                  Make a wishlist of upcoming games or games you want to play in
-                  the future.
+                  Sign up to our newsletter to get all the latest news and important information about Formula 1 season weekly.
                 </div>
                 <div class="onboarding-next">
                   <a href="#" class="button button-small" onClick={slideNext}>
@@ -148,9 +147,11 @@ export default function Onboarding(
                   <i class="icon f7-icons ios-only">tray_fill</i>
                   <i class="icon material-icons md-only">inventory_2</i>
                 </div>
-                <div class="onboarding-title">Archive</div>
+                <div class="onboarding-title">About us</div>
                 <div class="onboarding-text">
-                  Archive games that you have finished or dropped.
+                  We are a team of Formula 1 enthusiasts and we are building this open source project to share the news in 
+                  easy and accessible way for everyone.
+                  
                 </div>
                 <div class="onboarding-next">
                   <a href="#" class="button button-small" onClick={slideNext}>
