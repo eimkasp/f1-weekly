@@ -18,7 +18,7 @@ export default (props, { $store, $theme }) => {
         </div>
       </div>
       <div class="page-content">
-        <div class="page-title">Backlog</div>
+        <div class="page-title">Standings</div>
         {topGames.value.length > 0 ? (
           <DriverCards small grid games={topGames} />
         ) : (
