@@ -136,6 +136,13 @@ export default (
                                     </div>
                                 </div>
 
+                                <div>
+                                    <div class="block-title">Season Points</div>
+                                    <div class="block game-page-platforms">
+                                        {game.points} Points
+                                    </div>
+                                </div>
+
 
 
                                 {game.circuit && (
