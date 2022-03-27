@@ -1,3 +1,4 @@
+import DriverCards from '../components/DriverCards.f7.jsx';
 import GameCards from '../components/GameCards.f7.jsx';
 
 export default (props, { $store, $onMounted }) => {
@@ -46,9 +47,9 @@ export default (props, { $store, $onMounted }) => {
 
         <div class="block-title block-title-medium">Top Drivers / Standings</div>
         {topGames.value.length > 0 ? (
-          <GameCards key="top" games={topGames} metacritic />
+          <DriverCards key="top" games={topGames} metacritic />
         ) : (
-          <GameCards key="top-skeleton" skeleton />
+          <DriverCards key="top-skeleton" skeleton />
         )}
       </div>
     </div>

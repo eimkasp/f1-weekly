@@ -1,9 +1,9 @@
-const API_KEY = '56d6e875c750dd7cb5426da584b18353';
+const API_KEY = 'f27e05a8a2dde4913889e7654d29e13a';
 const endpoint = 'https://v1.formula-1.api-sports.io';
 const headers = {
   method: 'get',
   headers: new Headers({
-    'x-rapidapi-key': '56d6e875c750dd7cb5426da584b18353',
+    'x-rapidapi-key': 'f27e05a8a2dde4913889e7654d29e13a',
     'x-rapidapi-host': 'v1.formula-1.api-sports.io'
   }),
 };

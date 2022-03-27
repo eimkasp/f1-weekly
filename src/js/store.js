@@ -1,6 +1,8 @@
 import { createStore } from 'framework7';
 import api from './api.js';
 import { races } from './data.js';
+import { races as all_races } from './data/races.js';
+import { standings_drivers as drivers } from './data/standings-drivers.js';
 
 
 const getFromLocalStorage = (key, defaultValue) => {
@@ -18,9 +20,9 @@ const store = createStore({
     backlog: getFromLocalStorage('backlog', []),
     archive: getFromLocalStorage('archive', []),
     wishlist: getFromLocalStorage('wishlist', []),
-    topGames: getFromLocalStorage('races', races),
-    recentRaces: getFromLocalStorage('races', races).filter((item) => (item.status == 'done')),
-    upcomingGames: getFromLocalStorage('races', races).filter((item) => (item.status != 'done' && item.status)),
+    topGames: getFromLocalStorage('races', drivers).sort((a, b) => (a.position < b.position)),
+    recentRaces: getFromLocalStorage('races', all_races).filter((item) => (item.status == 'Completed' && item.type == "Race")),
+    upcomingGames: getFromLocalStorage('races', all_races).filter((item) => (item.status != 'Completed' && item.status && item.type == "Race")),
   },
   getters: {
     searchResults: ({ state }) => state.searchResults,

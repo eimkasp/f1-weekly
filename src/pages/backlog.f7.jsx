@@ -1,7 +1,9 @@
+import DriverCards from '../components/DriverCards.f7.jsx';
 import GameCards from '../components/GameCards.f7.jsx';
 
 export default (props, { $store, $theme }) => {
-  const { backlog } = $store.getters;
+  const { topGames } = $store.getters;
+  console.log(topGames);
   const icon = $theme.ios ? (
     <i class="icon f7-icons">compass_fill</i>
   ) : (
@@ -17,12 +19,11 @@ export default (props, { $store, $theme }) => {
       </div>
       <div class="page-content">
         <div class="page-title">Backlog</div>
-        {backlog.value.length > 0 ? (
-          <GameCards small grid games={backlog} />
+        {topGames.value.length > 0 ? (
+          <DriverCards small grid games={topGames} />
         ) : (
           <div class="block collection-placeholder">
-            Your Backlog is empty. Tap the {icon} button on the tab bar to
-            discover new games.
+           Standings are beeing updated. Check back shortly
           </div>
         )}
       </div>

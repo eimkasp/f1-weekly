@@ -66,7 +66,7 @@ export default (props, { $f7, $store, $update }) => {
                 <form class="searchbar" action="" onSubmit={search}>
                   <div class="searchbar-inner">
                     <div class="searchbar-input-wrap">
-                      <input type="search" placeholder="Search games" />
+                      <input type="search" placeholder="Search tracks, drivers and teams" />
                       <i class="searchbar-icon" />
                       <span class="input-clear-button" />
                     </div>

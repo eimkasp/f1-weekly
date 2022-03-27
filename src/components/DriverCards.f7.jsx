@@ -1,7 +1,7 @@
 import { gamePlatforms } from '../js/game-platforms.js';
 import './GameCards.less';
 
-export default function GameCards(props) {
+export default function DriverCards(props) {
   const { games, metacritic, grid, small, skeleton } = props;
 
   const classes = () => [
@@ -30,34 +30,19 @@ export default function GameCards(props) {
           <a
             key={game.id}
             class="game-card scroll-block-item"
-            href={`/race/${game.id}/`}
+            href="#"
           >
             <div class="game-card-image">
-              <img src={`${game.circuit.image}`} class="loaded" style="background: white; object-fit: contain;" />
+              <img src={`${game.driver.image}`} class="loaded" style="background: white; object-fit: contain;" />
             </div>
 
             <div class="game-card-logos">
-            {game.status == 'Completed' &&
             <div>
-              <span class='badge color-red'>Done</span>
+              <span class='badge color-deeporange'>{  game.points } Points</span>
             </div>
-            }
-
-{game.status == 'Scheduled' &&
-            <div>
-              <span class='badge color-green'>Next Race</span>
-            </div>
-            }
-
-{game.status == 'future' &&
-            <div>
-              <span class='badge color-yellow'>{ game.date }</span>
-            </div>
-            }
-
 
             </div>
-            <div class="game-card-name">{game.circuit.name}</div>
+            <div class="game-card-name">{game.driver.name}</div>
           </a>
         ))}
     </div>
