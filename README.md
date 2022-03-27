@@ -1,6 +1,6 @@
-# Backlogger
+# F1-Weekly
 
-Backlogger is a video games tracking app, to keep track of video game backlog, wishlist and archive.
+F1-Weekly is a video games tracking app, to keep track of video game backlog, wishlist and archive.
 
 ## Features
 

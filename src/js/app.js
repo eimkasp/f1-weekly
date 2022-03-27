@@ -10,7 +10,7 @@ import App from '../app.f7.jsx';
 
 // eslint-disable-next-line
 const app = new Framework7({
-  name: 'Backlogger', // App name
+  name: 'F1-Weekly', // App name
   theme: 'auto', // Automatic theme detection
   el: '#app', // App root element
   component: App, // App main component
@@ -20,7 +20,7 @@ const app = new Framework7({
   serviceWorker:
     process.env.NODE_ENV === 'production'
       ? {
-          path: '/service-worker.js',
-        }
+        path: '/service-worker.js',
+      }
       : {},
 });
