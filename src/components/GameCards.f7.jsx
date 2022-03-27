@@ -11,6 +11,16 @@ export default function GameCards(props) {
     skeleton ? 'skeleton-effect-wave' : '',
   ];
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const formatter = new Intl.DateTimeFormat('en', {
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric',
+    });
+    return formatter.format(date);
+  };
+
   return () => (
     <div class={classes().join(' ')}>
       
@@ -30,7 +40,7 @@ export default function GameCards(props) {
           <a
             key={game.id}
             class="game-card scroll-block-item"
-            href={`/race/${game.id}/`}
+            href={`/game/${game.id}/`}
           >
             <div class="game-card-image">
               <img src={`${game.circuit.image}`} class="loaded" style="background: white; object-fit: contain;" />
@@ -45,7 +55,7 @@ export default function GameCards(props) {
 
 {game.status == 'Scheduled' &&
             <div>
-              <span class='badge color-green'>Next Race</span>
+              <span class='badge color-green padding-left: 15px; padding-right: 15px;'>{ formatDate(game.date) }</span>
             </div>
             }
 
