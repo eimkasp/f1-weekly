@@ -1,5 +1,9 @@
 # F1-Weekly
 
+Live website hosted on Cloudflare Pages:
+F1-weekly.com [F1-Weekly.com](https://f1-weekly.com).
+
+
 F1-Weekly is a formula 1 season tracking app, to keep track of races, news, results and weekly newsletter for our fans.
 ## Features
 
