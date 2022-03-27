@@ -14,6 +14,7 @@ const app = new Framework7({
   theme: 'auto', // Automatic theme detection
   el: '#app', // App root element
   component: App, // App main component
+  cacheDuration: 0 /* set caching expire time to 0 */,
   store,
   routes,
   // Register service worker (only on production build)
