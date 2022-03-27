@@ -21,20 +21,20 @@ export default (props, { $store, $theme }) => {
           <GameCards small grid games={archive} />
         ) : (
           <div class="block collection-placeholder">
-             <a
-          class="col button button-large button-round button-fill"
-          style="margin-top: 50px;"
-          href="https://github.com/eimkasp/f1-weekly" 
-          target="_system">
-            Visit our github
+            <a
+              class="col button button-large button-round button-fill link external"
+              style="margin-top: 50px;"
+              href="https://github.com/eimkasp/f1-weekly"
+              target="_system">
+              Visit our github
             </a>
 
             <a
-          class="col button button-large button-round button-fill"
-          style="margin-top: 50px;"
-          href="https://www.instagram.com/f1weekly.live/" 
-          target="_system">
-            Visit our Instagram @f1weekly.live
+              class="col button button-large button-round button-fill link external"
+              style="margin-top: 50px;"
+              href="https://www.instagram.com/f1weekly.live/"
+              target="_system">
+              Visit our Instagram @f1weekly.live
             </a>
 
           </div>

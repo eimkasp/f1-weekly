@@ -16,24 +16,24 @@ export default (props, { $store, $theme }) => {
         </div>
       </div>
       <div class="page-content">
-        <div class="page-title">Subscribe to <br/> newsletter</div>
+        <div class="page-title">Subscribe to <br /> newsletter</div>
         {wishlist.value.length > 0 ? (
           <GameCards small grid games={wishlist} />
         ) : (
           <div class="block collection-placeholder" style="margin-bottom: 40px;">
-           Formula-1. In your inbox. Once a week.
-          <div>
-          <a
-          class="col button button-large button-round button-fill"
-          style="margin-top: 50px;"
-          href="https://f1-weekly.us14.list-manage.com/subscribe?u=9ccdc903b7654272517b9c0ba&id=805a52ba06" 
-          target="_system">
-            Subscribe
-            </a>
+            Formula-1. In your inbox. Once a week.
+            <div>
+              <a
+                class="col button button-large button-round button-fill link external"
+                style="margin-top: 50px;"
+                href="https://f1-weekly.us14.list-manage.com/subscribe?u=9ccdc903b7654272517b9c0ba&id=805a52ba06"
+                target="_system">
+                Subscribe
+              </a>
 
+            </div>
           </div>
-          </div>
-        
+
         )}
       </div>
     </div>
