@@ -1,7 +1,7 @@
 {
-  "name": "Backlogger",
-  "short_name": "Backlogger",
-  "description": "Backlogger",
+  "name": "F1-Weekly",
+  "short_name": "F1-Weekly",
+  "description": "Your weekly 5 minutes of Formula 1",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
