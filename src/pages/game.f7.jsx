@@ -20,9 +20,10 @@ export default (
   };
 
   const initPhotoBrowser = () => {
-    if (!game || !game.screenshots.length) return;
+    // if (!game || !game.circuit.image.length) return;
+    console.log(game.circuit.image);
     photoBrowser = $f7.photoBrowser.create({
-      photos: game.screenshots.map((el) => el.image),
+      photos: [game.circuit.image],
       popupPush: true,
       theme: 'dark',
       type: 'standalone',
@@ -82,7 +83,7 @@ export default (
               <div class="game-page-header-bg">
                 <img
                   src={
-                    game.background_image_additional || game.background_image
+                    game.circuit.image || game.circuit.image
                   }
                   alt={game.name}
                   onLoad={(e) => e.target.classList.add('loaded')}
@@ -90,8 +91,9 @@ export default (
               </div>
               <div class="game-page-header-card">
                 <img
-                  src={game.background_image || 'images/no-image.svg'}
+                  src={game.circuit.image || 'images/no-image.svg'}
                   alt={game.name}
+                  style="object-fit: contain; background: white;"
                   onLoad={(e) => e.target.classList.add('loaded')}
                 />
               </div>
@@ -102,12 +104,12 @@ export default (
             <div class="page-content">
               <div class="game-page-content">
                 <div class="block game-page-genres">
-                  {game.genres.map((genre) => (
+                  {/* {game.genres.map((genre) => (
                     <span>{genre.name}</span>
-                  ))}
+                  ))} */}
                 </div>
                 <div class="page-title game-page-title">
-                  <span>{game.name}</span>
+                  <span>{game.competition.name}</span>
                   <button
                     type="button"
                     class="button button-outline button-large game-page-actions-button"
@@ -120,7 +122,7 @@ export default (
                   </button>
                 </div>
 
-                {gamePlatforms(game).length > 0 && (
+                {/* {gamePlatforms(game).length > 0 && (
                   <>
                     <div class="block-title">Platforms</div>
                     <div class="block game-page-platforms">
@@ -132,16 +134,35 @@ export default (
                       ))}
                     </div>
                   </>
-                )}
+                )} */}
 
-                {game.released && (
+{game.circuit && (
                   <>
-                    <div class="block-title">Release Date</div>
+                    <div class="block-title">Circuit</div>
                     <div class="block game-page-text-item">
-                      {formatDate(game.released)}
+                      { game.circuit.name}
                     </div>
                   </>
                 )}
+
+                {game.date && (
+                  <>
+                    <div class="block-title">Race Date</div>
+                    <div class="block game-page-text-item">
+                      {formatDate(game.date)}
+                    </div>
+                  </>
+                )}
+                
+                {game.distance && (
+                  <>
+                    <div class="block-title">Race Distance</div>
+                    <div class="block game-page-text-item">
+                      { game.distance } / { game.laps.total } Laps
+                    </div>
+                  </>
+                )}
+
 
                 {game.description && (
                   <>
@@ -165,11 +186,11 @@ export default (
                   </>
                 )}
 
-                {game.screenshots && game.screenshots.length > 0 && (
+                {game.circuit.image && game.circuit.image > 0 && (
                   <>
-                    <div class="block-title">Screenshots</div>
+                    <div class="block-title">Images / News</div>
                     <div class="block game-page-screenshots scroll-block">
-                      {game.screenshots.map((item, index) => (
+                      {game.circuit.image.map((item, index) => (
                         <a
                           class="scroll-block-item"
                           key={index}

@@ -10,6 +10,8 @@ export default (props, { $store, $onMounted }) => {
     $store.dispatch('getTopGames');
   };
 
+  
+
   $onMounted(() => {
     fetchData();
   });

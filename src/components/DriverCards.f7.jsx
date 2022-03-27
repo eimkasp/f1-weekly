@@ -28,9 +28,9 @@ export default function DriverCards(props) {
         (games.value || games ).map((game) => (
           
           <a
-            key={game.id}
+            key={game.driver.id}
             class="game-card scroll-block-item"
-            href="#"
+            href={`/driver/${game.driver.id}/`}
           >
             <div class="game-card-image">
                 <div style="position: relative; height: 100%;">

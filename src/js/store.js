@@ -18,6 +18,8 @@ const store = createStore({
     searchNext: true,
     searchNextLoading: false,
     backlog: getFromLocalStorage('backlog', []),
+    races: getFromLocalStorage('races', all_races),
+    drivers: getFromLocalStorage('drivers', drivers),
     archive: getFromLocalStorage('archive', []),
     wishlist: getFromLocalStorage('wishlist', []),
     topGames: getFromLocalStorage('races', drivers).sort((a, b) => (a.position < b.position)),
@@ -80,8 +82,16 @@ const store = createStore({
       localStorage[listName] = JSON.stringify(state[listName]);
     },
 
-    getRace(ctx, id) {
-      return api.getGame(id);
+    getRace({ state }, id, ctx) {
+      console.log(ctx);
+      var race = state.races.filter((item) => item.id == id);
+      console.log(race[0]);
+      return race[0];
+    },
+
+    getDriver({ state }, id, ctx) {
+      var driver = state.drivers.filter((item) => item.driver.id == id);
+      return driver[0];
     },
 
     async search({ state }, query) {
