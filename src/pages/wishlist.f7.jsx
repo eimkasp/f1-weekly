@@ -35,6 +35,11 @@ export default (props, { $store, $theme }) => {
           </div>
 
         )}
+
+        <div style="padding-left: 20px; padding-right: 20px;">
+          <div class="elfsight-app-ffd38b82-35cd-440f-89be-ae460ddcb77c"></div>
+
+        </div>
       </div>
     </div>
   );
