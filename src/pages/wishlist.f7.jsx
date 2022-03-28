@@ -2,6 +2,10 @@ import GameCards from '../components/GameCards.f7.jsx';
 
 export default (props, { $store, $theme }) => {
   const { wishlist } = $store.getters;
+  setTimeout(
+    () => { window.dispatchEvent(new Event('resize')); },
+    2000
+  );
   const icon = $theme.ios ? (
     <i class="icon f7-icons">compass_fill</i>
   ) : (
