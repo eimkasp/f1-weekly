@@ -30,6 +30,11 @@ class PageController extends Controller
         return view('pages.standings');
     }
 
+    public function games(): View
+    {
+        return view('pages.games');
+    }
+
     public function constructorStandings(): View
     {
         $standings = ConstructorStanding::with('team')

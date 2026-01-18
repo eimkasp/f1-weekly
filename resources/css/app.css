@@ -32,6 +32,11 @@
     color-scheme: dark;
 }
 
+/* Safe area for mobile devices (iPhone notch, etc.) */
+.safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
 /* Prose styling for articles */
 .prose-invert {
     --tw-prose-body: theme(colors.gray.300);

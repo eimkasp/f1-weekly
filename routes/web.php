@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/games', [PageController::class, 'games'])->name('games');
 
 // News
 Route::prefix('news')->name('news.')->group(function () {
@@ -29,6 +30,10 @@ Route::prefix('drivers')->name('drivers.')->group(function () {
     Route::get('/', [DriverController::class, 'index'])->name('index');
     Route::get('/{driver:slug}', [DriverController::class, 'show'])->name('show');
 });
+
+// Quiz
+Route::get('/quiz', \App\Livewire\TriviaQuiz::class)->name('quiz');
+Route::get('/survival', \App\Livewire\SurvivalQuiz::class)->name('survival');
 Route::get('/driver/{driver:slug}', [DriverController::class, 'show'])->name('driver.show');
 
 // Teams
