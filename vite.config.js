@@ -1,30 +1,18 @@
-import path from 'path';
-import framework7 from 'rollup-plugin-framework7';
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import tailwindcss from '@tailwindcss/vite';
 
-const SRC_DIR = path.resolve(__dirname, './src');
-const PUBLIC_DIR = path.resolve(__dirname, './public');
-const BUILD_DIR = path.resolve(__dirname, './www');
-
-export default {
-  plugins: [framework7({ emitCss: false })],
-  root: SRC_DIR,
-  base: '',
-  publicDir: PUBLIC_DIR,
-  build: {
-    outDir: BUILD_DIR,
-    assetsInlineLimit: 0,
-    emptyOutDir: true,
-  },
-  resolve: {
-    alias: {
-      '@': SRC_DIR,
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+        tailwindcss(),
+    ],
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
     },
-  },
-  server: {
-    host: true,
-  },
-  esbuild: {
-    jsxFactory: '$jsx',
-    jsxFragment: '"Fragment"',
-  },
-};
+});

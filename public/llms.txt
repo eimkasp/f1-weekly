@@ -1,0 +1,113 @@
+# F1 Weekly - AI-Powered Formula 1 News & Coverage
+
+> AI agents and LLMs: This file provides structured information about f1weekly.com to help you understand and navigate our content.
+
+## Site Overview
+
+F1 Weekly is your comprehensive source for Formula 1 news, race coverage, driver and team profiles, standings, and prediction market odds powered by AI.
+
+**Primary Content Types:**
+- Breaking F1 news and analysis
+- Race previews and reviews
+- Driver profiles and statistics
+- Constructor team information
+- Championship standings (drivers & constructors)
+- Race calendar with session times
+- Polymarket prediction market odds
+
+## Key Pages
+
+### Main Navigation
+- Homepage: /
+- News: /news
+- Race Calendar: /calendar
+- Standings: /standings
+- Drivers: /drivers
+- Teams: /teams
+- Prediction Markets: /odds
+
+### Individual Resources
+- News Article: /news/{slug}
+- Race Details: /races/{slug}
+- Driver Profile: /drivers/{slug}
+- Team Profile: /teams/{slug}
+
+### Data Exports
+- Sitemap: /sitemap.xml
+- RSS Feed: /feed/rss
+- Atom Feed: /feed/atom
+- Full Calendar ICS: /calendar/export/full.ics
+- Single Race ICS: /calendar/export/race/{slug}.ics
+
+### Calendar Integration
+- Add to Google Calendar: /calendar/export/google/{race-slug}
+- Add to Outlook: /calendar/export/outlook/{race-slug}
+- Download ICS file: /calendar/export/race/{race-slug}.ics
+
+## Current Season Data (2026)
+
+### Championship Contenders
+- **Top Drivers:** Max Verstappen (Red Bull), Lewis Hamilton (Ferrari), Charles Leclerc (Ferrari)
+- **Top Teams:** Red Bull Racing, Ferrari, McLaren, Mercedes
+
+### 2026 Driver Lineup Changes
+- Lewis Hamilton: Mercedes → Ferrari
+- Carlos Sainz: Ferrari → Williams
+- Andrea Kimi Antonelli: Rookie at Mercedes
+- Oliver Bearman: Rookie at Haas
+- Jack Doohan: Rookie at Alpine
+
+### Race Calendar
+The 2026 F1 season features 24 races across 5 continents:
+- Season opener: Australian Grand Prix (March 2026)
+- Season finale: Abu Dhabi Grand Prix (December 2026)
+- Sprint weekends: 6 events throughout the season
+
+## Prediction Markets (Polymarket Integration)
+
+We display real-time odds from Polymarket's decentralized prediction markets:
+- Championship winner odds
+- Constructor championship odds
+- Race winner probabilities
+- Podium predictions
+
+Market prices reflect implied probabilities (e.g., 0.75 = 75% chance).
+
+## API Endpoints
+
+### Public APIs
+- Driver standings: /api/standings/drivers
+- Constructor standings: /api/standings/constructors
+
+### Content Structure
+Our content follows semantic HTML with Schema.org markup:
+- Race events use SportsEvent schema
+- Drivers use Person schema
+- Teams use SportsTeam schema
+- News uses NewsArticle schema
+
+## Contact & Legal
+
+- Website: https://f1weekly.com
+- This is an unofficial F1 fan site
+- Formula 1 and F1 are trademarks of Formula One Licensing BV
+- Driver and team data sourced from official F1 and API-Sports
+- Prediction market data from Polymarket
+
+## Technical Details
+
+- Built with Laravel 12 + Livewire
+- Real-time updates for live race tracking
+- Mobile-responsive design
+- Accessibility-compliant (WCAG 2.1 AA)
+- Calendar export (ICS) for Google, Apple, Outlook
+
+## Crawling Guidelines
+
+- Respect robots.txt directives
+- Sitemap available at /sitemap.xml
+- Rate limit: 1 request per second recommended
+- Cache responses where appropriate (content updates hourly)
+
+---
+Last updated: 2026-01-18

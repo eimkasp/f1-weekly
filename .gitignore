@@ -40,3 +40,8 @@ Thumbs.db
 
 # Production build
 www/
+.env
+/backup/legacy
+/legacy/source
+/legacy/source
+/legacy

@@ -1,0 +1,13 @@
+# Allow all bots and crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /livewire
+
+# Sitemap location
+Sitemap: {{ url('/sitemap.xml') }}
+
+# Crawl delay (be polite)
+Crawl-delay: 1
