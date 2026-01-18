@@ -6,15 +6,70 @@
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
                     Your AI-Powered <span class="text-red-500">F1</span> News Source
                 </h1>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
                     Stay ahead of the grid with intelligent analysis, real-time updates, and comprehensive coverage of
                     Formula 1.
                 </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-4">
+                    <a href="{{ route('news.index') }}"
+                        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-colors shadow-lg shadow-red-900/20">
+                        Latest News
+                    </a>
+                    <a href="{{ route('standings') }}"
+                        class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-bold rounded-xl transition-colors border border-gray-700 shadow-lg">
+                        Standings
+                    </a>
+                </div>
             </div>
 
             <!-- Live Race Tracker (if live) -->
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto space-y-8">
                 <livewire:live-race-tracker />
+                <livewire:next-race-countdown />
+            </div>
+        </div>
+    </section>
+
+    <!-- F1 Arcade Promo -->
+    <section class="py-6 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div
+                class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-red-900 to-black shadow-2xl border border-red-900/50">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-red-600 rounded-full blur-3xl opacity-20">
+                </div>
+                <div class="relative p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-center md:text-left">
+                        <span
+                            class="inline-block px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-bold uppercase tracking-wider rounded-full mb-3 border border-yellow-500/30">
+                            New Feature
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-black text-white italic mb-2 tracking-tight">
+                            THINK YOU KNOW <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">FORMULA
+                                1?</span>
+                        </h2>
+                        <p class="text-gray-400 max-w-md text-lg">
+                            Test your knowledge with our Daily Trivia or push your limits in Survival Mode.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                        <a href="{{ route('quiz') }}"
+                            class="group relative px-8 py-4 bg-white text-black font-black uppercase text-sm tracking-widest rounded-xl hover:bg-gray-200 transition-all transform hover:-translate-y-1 text-center shadow-lg shadow-white/10">
+                            Daily Trivia
+                        </a>
+                        <a href="{{ route('survival') }}"
+                            class="group relative px-8 py-4 bg-red-600 text-white font-black uppercase text-sm tracking-widest rounded-xl hover:bg-red-500 transition-all transform hover:-translate-y-1 text-center shadow-lg shadow-red-600/20">
+                            Survival Mode
+                            <span class="absolute -top-2 -right-2 flex h-4 w-4">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-4 w-4 bg-yellow-500"></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
