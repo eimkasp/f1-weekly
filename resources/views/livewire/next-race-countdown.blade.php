@@ -1,6 +1,6 @@
-<div wire:poll.1s class="w-full">
+<div class="w-full">
     @if ($race)
-        <div
+        <div x-data="countdown('{{ $race->race_date }}')"
             class="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 shadow-2xl relative overflow-hidden group">
             <!-- Background Image Effect -->
             <div class="absolute inset-0 z-0">
@@ -31,23 +31,23 @@
                 <!-- Countdown Timer -->
                 <div class="flex gap-4">
                     <div class="bg-black/50 rounded-lg p-3 w-16 md:w-20 text-center border border-gray-800">
-                        <span
+                        <span x-text="days"
                             class="block text-2xl md:text-3xl font-bold text-white font-mono">{{ $timeRemaining['days'] ?? 0 }}</span>
                         <span class="text-xs text-gray-500 uppercase font-bold">Days</span>
                     </div>
                     <div class="bg-black/50 rounded-lg p-3 w-16 md:w-20 text-center border border-gray-800">
-                        <span
+                        <span x-text="hours.toString().padStart(2, '0')"
                             class="block text-2xl md:text-3xl font-bold text-white font-mono">{{ sprintf('%02d', $timeRemaining['hours'] ?? 0) }}</span>
                         <span class="text-xs text-gray-500 uppercase font-bold">Hrs</span>
                     </div>
                     <div class="bg-black/50 rounded-lg p-3 w-16 md:w-20 text-center border border-gray-800">
-                        <span
+                        <span x-text="minutes.toString().padStart(2, '0')"
                             class="block text-2xl md:text-3xl font-bold text-white font-mono">{{ sprintf('%02d', $timeRemaining['minutes'] ?? 0) }}</span>
                         <span class="text-xs text-gray-500 uppercase font-bold">Mins</span>
                     </div>
                     <div
                         class="bg-black/50 rounded-lg p-3 w-16 md:w-20 text-center border border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
-                        <span
+                        <span x-text="seconds.toString().padStart(2, '0')"
                             class="block text-2xl md:text-3xl font-bold text-red-500 font-mono">{{ sprintf('%02d', $timeRemaining['seconds'] ?? 0) }}</span>
                         <span class="text-xs text-red-500/80 uppercase font-bold">Secs</span>
                     </div>

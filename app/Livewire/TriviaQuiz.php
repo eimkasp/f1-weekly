@@ -65,6 +65,8 @@ class TriviaQuiz extends Component
 
     public function render()
     {
-        return view('livewire.trivia-quiz')->layout('components.layouts.app');
+        return view('livewire.trivia-quiz', [
+            'question' => $this->question,
+        ])->layout('components.layouts.app');
     }
 }

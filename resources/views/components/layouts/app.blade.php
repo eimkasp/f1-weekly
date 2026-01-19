@@ -46,9 +46,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
     <!-- Additional head content -->
     @stack('head')
 </head>
@@ -151,35 +148,39 @@
                         <!-- Auth -->
                         <div class="ml-4 border-l border-gray-800 pl-4">
                             @auth
-                                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                                    <button class="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-colors">
+                                <div class="relative" x-data="{ open: false }" @mouseenter="open = true"
+                                    @mouseleave="open = false">
+                                    <button
+                                        class="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-colors">
                                         {{ Auth::user()->name }}
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </button>
-                                    <div x-show="open" 
-                                        x-cloak
-                                        x-transition:enter="transition ease-out duration-100"
+                                    <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-100"
                                         x-transition:enter-start="opacity-0 scale-95"
                                         x-transition:enter-end="opacity-100 scale-100"
                                         x-transition:leave="transition ease-in duration-75"
                                         x-transition:leave-start="opacity-100 scale-100"
                                         x-transition:leave-end="opacity-0 scale-95"
                                         class="absolute top-full right-0 mt-1 w-48 bg-gray-900 border border-gray-800 rounded-xl shadow-xl overflow-hidden z-50">
-                                        <a href="{{ route('profile.edit') }}" class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
+                                        <a href="{{ route('profile.edit') }}"
+                                            class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
                                             Profile
                                         </a>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            <button type="submit" class="block w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-gray-800 hover:text-red-300 transition-colors border-t border-gray-800">
+                                            <button type="submit"
+                                                class="block w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-gray-800 hover:text-red-300 transition-colors border-t border-gray-800">
                                                 Log Out
                                             </button>
                                         </form>
                                     </div>
                                 </div>
                             @else
-                                <a href="{{ route('login') }}" class="px-4 py-2 text-sm font-bold text-gray-900 bg-white rounded-lg hover:bg-gray-200 transition-colors">
+                                <a href="{{ route('login') }}"
+                                    class="px-4 py-2 text-sm font-bold text-gray-900 bg-white rounded-lg hover:bg-gray-200 transition-colors">
                                     Sign In
                                 </a>
                             @endauth
