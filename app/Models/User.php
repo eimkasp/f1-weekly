@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'favorite_driver_id',
+        'survival_high_score',
     ];
 
     /**
@@ -44,5 +46,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function favoriteDriver()
+    {
+        return $this->belongsTo(Driver::class, 'favorite_driver_id');
+    }
+
+    public function canAccessPanel(\Filament\Panel $panel): bool
+    {
+        // Allow all users to access the admin panel in local, or restrict to specific emails
+        return true; 
+        // return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
     }
 }

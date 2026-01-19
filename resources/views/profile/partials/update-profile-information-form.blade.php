@@ -47,6 +47,19 @@
             @endif
         </div>
 
+        <div>
+            <x-input-label for="favorite_driver_id" :value="__('Favorite Driver')" />
+            <select id="favorite_driver_id" name="favorite_driver_id" class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                <option value="">{{ __('Select a driver...') }}</option>
+                @foreach($drivers as $driver)
+                    <option value="{{ $driver->id }}" {{ old('favorite_driver_id', $user->favorite_driver_id) == $driver->id ? 'selected' : '' }}>
+                        {{ $driver->first_name }} {{ $driver->last_name }} ({{ $driver->team->name ?? 'None' }})
+                    </option>
+                @endforeach
+            </select>
+            <x-input-error class="mt-2" :messages="$errors->get('favorite_driver_id')" />
+        </div>
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 

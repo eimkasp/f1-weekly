@@ -55,11 +55,19 @@ class SurvivalQuiz extends Component
 
         if ($option === $this->correctAnswer) {
             $this->score++;
-            // Delay for effect, then next question (Frontend handles delay usually, but here we can just update state)
-            // We'll let the user click "Next" to continue or auto-advance. 
-            // For Survival, suspense is key. Let's show result, then user clicks "Next".
         } else {
             $this->gameOver = true;
+            $this->saveScore();
+        }
+    }
+
+    protected function saveScore()
+    {
+        if (\Illuminate\Support\Facades\Auth::check()) {
+            $user = \Illuminate\Support\Facades\Auth::user();
+            if ($this->score > $user->survival_high_score) {
+                $user->update(['survival_high_score' => $this->score]);
+            }
         }
     }
 

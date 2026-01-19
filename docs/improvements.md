@@ -22,7 +22,7 @@ This document outlines the current feature requests and improvement plans for th
 ## 🟡 Should Have
 *Important features that provide significant value but aren't vital for the app to function.*
 
-1.  **User Identity System**
+1.  **User Identity System** ✅ **(Completed)**
     *   **Context:** Quizzes are currently stateless per session.
     *   **Task:** Implement `auth` (Breeze/Jetstream).
     *   **Value:** Enable saving "Survival Mode" high scores and "Favorite Driver" preferences to personalize the feed.

@@ -18,6 +18,7 @@ class ProfileController extends Controller
     {
         return view('profile.edit', [
             'user' => $request->user(),
+            'drivers' => \App\Models\Driver::orderBy('last_name')->get(),
         ]);
     }
 
