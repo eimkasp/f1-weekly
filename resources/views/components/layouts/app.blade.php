@@ -143,6 +143,10 @@
                             </svg>
                             Odds
                         </a>
+
+                        <div class="ml-4 w-64">
+                            @livewire('global-search')
+                        </div>
                     </div>
 
                     <!-- Live Indicator (Desktop) -->

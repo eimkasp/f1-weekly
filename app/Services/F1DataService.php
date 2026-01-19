@@ -112,8 +112,9 @@ class F1DataService
         $cacheKey = 'f1_circuits';
 
         $data = Cache::remember($cacheKey, 86400, function () {
-            $response = Http::get("{$this->ergastUrl}/circuits.json?limit=100");
-            return $response->json('MRData.CircuitTable.Circuits', []);
+            // Using robust fetcher
+            $json = $this->fetchJson("{$this->ergastUrl}/circuits.json", ['limit' => 100]);
+            return data_get($json, 'MRData.CircuitTable.Circuits', []);
         });
 
         $count = 0;
@@ -371,5 +372,27 @@ class F1DataService
         return Race::completed()
             ->with(['circuit', 'results.driver', 'results.team'])
             ->first();
+    }
+
+    /**
+     * Robust fetcher with retry and error handling
+     */
+    protected function fetchJson(string $url, array $params = []): array
+    {
+        try {
+            $response = Http::retry(3, 300)
+                ->timeout(15)
+                ->get($url, $params);
+
+            if ($response->successful()) {
+                return $response->json() ?? [];
+            }
+
+            Log::channel('f1-data')->warning("API Error: {$response->status()} for {$url}");
+            return [];
+        } catch (\Exception $e) {
+            Log::channel('f1-data')->error("Connection Error: {$e->getMessage()} for {$url}");
+            return [];
+        }
     }
 }

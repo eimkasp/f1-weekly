@@ -5,17 +5,17 @@ This document outlines the current feature requests and improvement plans for th
 ## 🔴 Must Have
 *Critical features necessary for the core value proposition and operations.*
 
-1.  **Quiz Administration (Filament)**
+1.  **Quiz Administration (Filament)** ✅ **(Completed)**
     *   **Context:** We launched the Quiz UI, but currently, questions can only be added via Database Seeder.
     *   **Task:** Create a `QuestionResource` in Filament.
     *   **Fields:** Question Text, Type (Trivia/Survival), Difficulty, Category, Options (Repeater), Correct Answer, Explanation.
-2.  **Team/Constructor Profiles**
+2.  **Team/Constructor Profiles** ✅ **(Completed)**
     *   **Context:** Users can click on Drivers, but Team names are currently just text or unlinked.
     *   **Task:** Create `Team` model, migration, and `teams.show` view with team history, car specs, and driver lineup.
-3.  **Global Search**
+3.  **Global Search** ✅ **(Completed)**
     *   **Context:** No way to search for specific content.
     *   **Task:** Implement full-site search (News, Drivers, Races, Trivia) in the top navigation bar.
-4.  **Data Automation Stability**
+4.  **Data Automation Stability** ✅ **(Completed)**
     *   **Context:** Current data fetching interacts with external sources.
     *   **Task:** Harden the `LiveRaceTracker` and `NewsFetcher` services with better error handling, rate limiting, and fallback data sources.
 
